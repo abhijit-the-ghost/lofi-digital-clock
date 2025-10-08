@@ -1,75 +1,76 @@
-# React + TypeScript + Vite
+# Lofi Digital Clock
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal, lofi-inspired digital clock built with React, TypeScript, Vite, Tailwind CSS, and DaisyUI. The clock features a smooth width transition when toggling between 12-hour and 24-hour formats, time-based themes (dawn, day, dusk, night) with natural gradients, stars, and a moon, and a calendar display. The design emphasizes a retro aesthetic with the VT323 pixel font and accessibility features for screen readers.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic Themes**: Automatically switches between dawn (5–7 AM), day (7 AM–5 PM), dusk (5–7 PM), and night (7 PM–5 AM) with natural gradients, stars, and a glowing moon.
+- **Time Format Toggle**: Switch between 12-hour (with AM/PM) and 24-hour formats with a subtle `<span>` toggle and animated card width transition.
+- **Calendar**: Displays the current date (e.g., "Wednesday, October 8, 2025") using `Intl.DateTimeFormat`.
+- **Accessibility**: Includes ARIA labels, screen-reader text, and support for `prefers-reduced-motion`.
 
-## React Compiler
+## Prerequisites
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **Node.js**: Version 22 or higher.
+- **Yarn**: Package manager for installing dependencies.
+- **Modern Browser**: Chrome, Firefox, Safari, or Edge for optimal rendering.
 
-Note: This will impact Vite dev & build performances.
+## Installation
 
-## Expanding the ESLint configuration
+1. Clone the repository:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+   ```bash
+   git clone git@github.com:abhijit-the-ghost/lofi-digital-clock.git
+   cd lofi-digital-clock
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. Install dependencies using Yarn:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+   ```bash
+   yarn
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. Ensure Node.js 22 is installed. Verify with:
+   ```bash
+   node --version
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Start the development server with Vite:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```bash
+   yarn dev
+   ```
+
+   Open `http://localhost:5173` (or the port shown in the terminal) in your browser.
+
+2. Build the project for production:
+
+   ```bash
+   yarn build
+   ```
+
+3. Preview the production build:
+   ```bash
+   yarn preview
+   ```
+
+## Customization
+
+- **Themes**: Modify the `themeStyles` object in `src/Clock.tsx` to adjust gradients, text colors, or star opacity for dawn, day, dusk, and night.
+- **Time Ranges**: Update the `getTheme` function in `src/Clock.tsx` to change the hour ranges for each theme (e.g., dawn from 5–7 AM to 4–6 AM).
+- **Toggle Style**: Adjust the `<span>` toggle’s classes (e.g., `text-sm`, `hover:underline`) in `src/Clock.tsx` for a different look or animation.
+
+## Dependencies
+
+- **React**: JavaScript library for building the UI.
+- **TypeScript**: Adds static types for better code reliability.
+- **Vite**: Fast build tool and development server.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **DaisyUI**: Tailwind plugin for pre-built components (e.g., `card`, `btn`).
+- **VT323 Font**: Google Fonts pixel font for the lofi aesthetic.
+
+## License
+
+MIT License
