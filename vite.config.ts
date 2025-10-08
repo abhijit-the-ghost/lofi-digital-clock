@@ -12,5 +12,5 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
-  base: "/digital-clock/",
+  base: "/lofi-digital-clock/",
 });
