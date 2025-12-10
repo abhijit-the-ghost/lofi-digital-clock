@@ -20,6 +20,9 @@ jobs:
           yarn install
           yarn build
 
+      - name: Add CNAME
+        run: echo "clock.abhijitguragain.com.np" > dist/CNAME
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
