@@ -18,7 +18,13 @@ const ThemeSelector = ({ currentTheme, onThemeChange }: ThemeSelectorProps) => {
                 {themes.map((theme) => (
                     <li key={theme.id}>
                         <button
-                            onClick={() => onThemeChange(theme)}
+                            onClick={() => {
+                                onThemeChange(theme);
+                                const elem = document.activeElement as HTMLElement;
+                                if (elem) {
+                                    elem.blur();
+                                }
+                            }}
                             className={`flex items-center gap-3 p-2 ${currentTheme.id === theme.id ? "active bg-base-content/10" : ""}`}
                         >
                             <div

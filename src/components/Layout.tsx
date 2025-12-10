@@ -12,13 +12,13 @@ interface LayoutProps {
 const Layout = ({ left, right, theme, themeSelector }: LayoutProps) => {
     return (
         <div
-            className="flex flex-col lg:flex-row h-screen w-full overflow-hidden transition-all duration-700 ease-in-out relative"
+            className="flex flex-col lg:flex-row min-h-screen w-full overflow-x-hidden transition-all duration-700 ease-in-out relative"
             style={{ background: theme.gradient }}
         >
             <ParticlesBackground color={theme.colors.particle} />
 
             {/* Content Container */}
-            <div className="relative z-10 flex flex-col lg:flex-row w-full h-full items-center justify-center gap-6 md:gap-12 lg:gap-24 p-4">
+            <div className="relative z-10 flex flex-col lg:flex-row w-full min-h-screen items-center justify-center gap-8 md:gap-12 lg:gap-24 p-4 pb-24 lg:pb-4">
                 {/* Left Section: Clock */}
                 <div className="flex items-center justify-center w-full lg:w-auto">
                     <div

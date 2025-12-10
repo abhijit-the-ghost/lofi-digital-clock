@@ -23,7 +23,7 @@ const Calendar = () => {
 
         // Empty cells for days before the first day of the month
         for (let i = 0; i < firstDayOfMonth; i++) {
-            calendarDays.push(<div key={`empty-${i}`} className="h-10 w-10" />);
+            calendarDays.push(<div key={`empty-${i}`} className="h-8 w-8 md:h-10 md:w-10" />);
         }
 
         // Days of the month
@@ -32,7 +32,7 @@ const Calendar = () => {
             calendarDays.push(
                 <div
                     key={i}
-                    className={`h-10 w-10 flex items-center justify-center rounded-full text-lg font-[VT323] transition-all duration-300 ${isToday
+                    className={`h-8 w-8 md:h-10 md:w-10 flex items-center justify-center rounded-full text-base md:text-lg font-[VT323] transition-all duration-300 ${isToday
                         ? "bg-primary text-primary-content scale-110 shadow-lg"
                         : "hover:bg-base-200 text-base-content"
                         }`}
