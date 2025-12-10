@@ -16,13 +16,13 @@ const Clock = () => {
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="flex items-baseline gap-4 font-[VT323] text-base-content drop-shadow-lg">
-        <div className="text-[12rem] leading-none tracking-tighter">
+      <div className="flex items-baseline gap-2 md:gap-4 font-[VT323] text-base-content drop-shadow-lg">
+        <div className="text-6xl md:text-9xl lg:text-[12rem] leading-none tracking-tighter">
           {hours}:{minutes}
         </div>
         <div className="flex flex-col items-start">
-          <div className="text-6xl leading-none opacity-80">{seconds}</div>
-          {is12Hour && <div className="text-4xl leading-none opacity-60 mt-2">{period}</div>}
+          <div className="text-3xl md:text-5xl lg:text-6xl leading-none opacity-80">{seconds}</div>
+          {is12Hour && <div className="text-xl md:text-3xl lg:text-4xl leading-none opacity-60 mt-1 md:mt-2">{period}</div>}
         </div>
       </div>
 

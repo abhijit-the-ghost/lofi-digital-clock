@@ -18,11 +18,11 @@ const Layout = ({ left, right, theme, themeSelector }: LayoutProps) => {
             <ParticlesBackground color={theme.colors.particle} />
 
             {/* Content Container */}
-            <div className="relative z-10 flex flex-col lg:flex-row w-full h-full items-center justify-center gap-12 lg:gap-24">
+            <div className="relative z-10 flex flex-col lg:flex-row w-full h-full items-center justify-center gap-6 md:gap-12 lg:gap-24 p-4">
                 {/* Left Section: Clock */}
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center w-full lg:w-auto">
                     <div
-                        className="p-12 rounded-3xl shadow-2xl backdrop-blur-md transition-colors duration-500 border border-white/10"
+                        className="p-6 md:p-12 rounded-3xl shadow-2xl backdrop-blur-md transition-colors duration-500 border border-white/10 w-full max-w-sm lg:max-w-none flex justify-center"
                         style={{ backgroundColor: theme.colors.containerBg, color: theme.colors.text }}
                     >
                         {left}
@@ -30,9 +30,9 @@ const Layout = ({ left, right, theme, themeSelector }: LayoutProps) => {
                 </div>
 
                 {/* Right Section: Calendar */}
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center w-full lg:w-auto">
                     <div
-                        className="p-8 rounded-3xl shadow-2xl backdrop-blur-md transition-colors duration-500 border border-white/10"
+                        className="p-4 md:p-8 rounded-3xl shadow-2xl backdrop-blur-md transition-colors duration-500 border border-white/10 w-full max-w-sm lg:max-w-none"
                         style={{ backgroundColor: theme.colors.containerBg, color: theme.colors.text }}
                     >
                         {right}
